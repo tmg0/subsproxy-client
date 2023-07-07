@@ -8,16 +8,17 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
+  "dependencies": {
+    "unstorage": "^1.7.0"
+  },
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@nuxtjs/tailwindcss": "^6.8.0",
     "@types/node": "^18",
+    "daisyui": "^3.1.10",
     "eslint": "^8.44.0",
     "nuxt": "^3.6.1",
     "typescript": "^5.1.6"
-  },
-  "dependencies": {
-    "unstorage": "^1.7.0"
   }
 }

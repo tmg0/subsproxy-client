@@ -10,14 +10,24 @@ const onSignIn = async () => {
 </script>
 
 <template>
-  <div class="w-full flex flex-col">
-    <div>Sign in</div>
+  <div class="p-4 w-screen h-screen flex items-center">
+    <div class="card w-full bg-base-100 shadow-xl">
+      <figure><img src="https://daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.jpg" alt="car!"></figure>
 
-    <input v-model="username" placeholder="username">
-    <input v-model="password" placeholder="password" type="password">
+      <div class="card-body">
+        <h2 class="card-title">
+          Sign in
+        </h2>
 
-    <button class="bg-black text-white" @click="onSignIn">
-      Sign in
-    </button>
+        <input v-model="username" placeholder="Username" class="input input-bordered w-full focus:outline-none">
+        <input v-model="password" placeholder="Password" type="password" class="input input-bordered w-full focus:outline-none">
+
+        <div class="card-actions justify-end">
+          <button class="btn btn-primary" @click="onSignIn">
+            Sign in
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>

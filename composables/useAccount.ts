@@ -1,3 +1,10 @@
+export interface Account {
+  id: string
+  username: string
+  createdAt: string
+  updatedAt: string
+}
+
 export const useAccounts = () => {
-  const accounts = ref([])
+  return useRequest<Account[]>('/accounts')
 }
