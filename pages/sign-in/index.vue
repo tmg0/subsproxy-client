@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import ArrowRight from '~icons/carbon/arrow-right'
+
 const { username, password, signIn } = useSignIn()
 
 const router = useRouter()
@@ -11,20 +13,23 @@ const onSignIn = async () => {
 
 <template>
   <div class="p-4 w-screen h-screen flex items-center">
-    <div class="card w-full bg-base-100 shadow-xl">
+    <div class="card w-full bg-base-100 shadow-xl image-ful">
       <figure><img src="https://daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.jpg" alt="car!"></figure>
 
-      <div class="card-body">
+      <div class="card-body gap-4">
         <h2 class="card-title">
-          Sign in
+          Subsproxy
         </h2>
 
-        <input v-model="username" placeholder="Username" class="input input-bordered w-full focus:outline-none">
-        <input v-model="password" placeholder="Password" type="password" class="input input-bordered w-full focus:outline-none">
+        <div class="w-full flex flex-col gap-2">
+          <input v-model="username" placeholder="Username" class="input input-bordered w-full focus:outline-none">
+          <input v-model="password" placeholder="Password" type="password" class="input input-bordered w-full focus:outline-none">
+        </div>
 
         <div class="card-actions justify-end">
           <button class="btn btn-primary" @click="onSignIn">
-            Sign in
+            <span>Sign in</span>
+            <ArrowRight class="text-xl" />
           </button>
         </div>
       </div>
