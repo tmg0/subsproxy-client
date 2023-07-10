@@ -9,6 +9,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "nanoid": "^4.0.2",
     "unstorage": "^1.7.0"
   },
   "devDependencies": {

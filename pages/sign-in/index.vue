@@ -17,7 +17,7 @@ const onSignIn = async () => {
       <figure><img src="https://daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.jpg" alt="car!"></figure>
 
       <div class="card-body gap-4">
-        <h2 class="card-title">
+        <h2 class="card-title uppercase">
           Subsproxy
         </h2>
 
@@ -25,6 +25,8 @@ const onSignIn = async () => {
           <input v-model="username" placeholder="Username" class="input input-bordered w-full focus:outline-none">
           <input v-model="password" placeholder="Password" type="password" class="input input-bordered w-full focus:outline-none">
         </div>
+
+        <a class="block link text-xs">View my github repo.</a>
 
         <div class="card-actions justify-end">
           <button class="btn btn-primary" @click="onSignIn">
