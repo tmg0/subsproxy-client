@@ -17,6 +17,18 @@ const { data } = useAccounts()
           </div>
 
           <AccountCard v-for="account in data" :key="account.id" :account="account" class="mx-4" @click="router.push({ name: 'account-id', params: { id: account.id }})" />
+          <AccountCard v-for="account in data" :key="account.id" :account="account" class="mx-4" />
+          <AccountCard v-for="account in data" :key="account.id" :account="account" class="mx-4" />
+          <AccountCard v-for="account in data" :key="account.id" :account="account" class="mx-4" />
+          <AccountCard v-for="account in data" :key="account.id" :account="account" class="mx-4" />
+          <AccountCard v-for="account in data" :key="account.id" :account="account" class="mx-4" />
+          <AccountCard v-for="account in data" :key="account.id" :account="account" class="mx-4" />
+          <AccountCard v-for="account in data" :key="account.id" :account="account" class="mx-4" />
+          <AccountCard v-for="account in data" :key="account.id" :account="account" class="mx-4" />
+          <AccountCard v-for="account in data" :key="account.id" :account="account" class="mx-4" />
+          <AccountCard v-for="account in data" :key="account.id" :account="account" class="mx-4" />
+          <AccountCard v-for="account in data" :key="account.id" :account="account" class="mx-4" />
+          <AccountCard v-for="account in data" :key="account.id" :account="account" class="mx-4" />
         </div>
       </div>
     </div>
