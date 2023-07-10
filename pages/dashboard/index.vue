@@ -1,29 +1,22 @@
 <script setup lang="ts">
+import Search from '~icons/carbon/search'
+
+const router = useRouter()
 const { data } = useAccounts()
 </script>
 
 <template>
   <NuxtLayout name="basic">
-    <div class="px-4 flex flex-col gap-3">
-      <div v-for="account in data" :key="account.id" class="card shadow-xl cursor-pointer bg-white border-r-2 border-solid border-r-accent">
-        <div class="p-3 flex items-center gap-4">
-          <div class="avatar placeholder">
-            <div class="font-bold text-2xl w-12 rounded-xl bg-gradient-to-br from-sky-500 to-primary text-white uppercase">
-              <span>{{ account.username.split('.').at(-1)?.at(0) }}</span>
-            </div>
+    <div class="flex-1 overflow-hidden flex flex-col relative">
+      <div class="box-border flex-1 overflow-auto">
+        <div class="flex flex-col gap-3 mb-20">
+          <div class="mx-4 flex items-center justify-end">
+            <button class="btn btn-circle flex">
+              <Search class="text-lg" />
+            </button>
           </div>
 
-          <div class="h-12 text-sm flex-1 flex justify-between">
-            <div class="h-full flex flex-col gap-2 justify-center">
-              <div class="font-bold uppercase">
-                # {{ account.username }}
-              </div>
-
-              <div class="flex gap-2 items-center">
-                <span class="badge badge-xs text-xs px-2">Just my socks</span>
-              </div>
-            </div>
-          </div>
+          <AccountCard v-for="account in data" :key="account.id" :account="account" class="mx-4" @click="router.push({ name: 'account-id', params: { id: account.id }})" />
         </div>
       </div>
     </div>
