@@ -11,7 +11,7 @@ const onSignOut = async () => {
 </script>
 
 <template>
-  <div class="flex flex-col bg-[#f2f2f2] relative">
+  <div class="flex w-screen h-screen overflow-hidden flex-col bg-[#f2f2f2] relative">
     <div class="p-4 flex w-full items-center justify-between absolute top-0 left-0 right-0 h-20 z-10" :style="{ backgroundImage: 'rgb(248, 247, 252, 0.5)', backdropFilter: 'blur(10px)' }">
       <div class="dropdown">
         <label tabindex="0" class="btn btn-circle text-lg m-1"><Menu /></label>

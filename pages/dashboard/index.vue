@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import IntentRequestCreate from '~icons/carbon/intent-request-create'
 import Search from '~icons/carbon/search'
 
 const router = useRouter()
@@ -13,6 +14,10 @@ const { data } = useAccounts()
           <div class="mx-4 flex items-center justify-end">
             <button class="btn btn-circle flex">
               <Search class="text-lg" />
+            </button>
+
+            <button class="btn btn-circle flex">
+              <IntentRequestCreate class="text-lg" />
             </button>
           </div>
 
