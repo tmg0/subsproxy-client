@@ -7,11 +7,11 @@ const { data } = useAccounts()
 </script>
 
 <template>
-  <NuxtLayout name="basic">
+  <NuxtLayout>
     <div class="flex-1 flex flex-col">
       <div class="box-border flex-1">
         <div class="flex flex-col gap-3 pb-40">
-          <div class="mx-4 flex items-center justify-end">
+          <div class="mx-4 flex items-center justify-end gap-2">
             <button class="btn btn-circle flex">
               <Search class="text-lg" />
             </button>

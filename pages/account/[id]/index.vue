@@ -3,7 +3,7 @@ const route = useRoute()
 </script>
 
 <template>
-  <NuxtLayout name="basic">
+  <NuxtLayout>
     <div>{{ route.params }}</div>
   </NuxtLayout>
 </template>
