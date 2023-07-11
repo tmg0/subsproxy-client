@@ -30,7 +30,7 @@ const onSignOut = async () => {
       </div>
     </div>
 
-    <div class="pt-20 w-screen h-screen overflow-auto">
+    <div class="pt-20 box-border absolute top-0 left-0 right-0 bottom-0 overflow-auto">
       <slot />
     </div>
   </div>
