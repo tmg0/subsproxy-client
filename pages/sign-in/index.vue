@@ -12,7 +12,7 @@ const onSignIn = async () => {
 </script>
 
 <template>
-  <div class="p-4 w-screen h-screen flex items-center bg-[#f2f2f2]">
+  <div class="p-4 w-screen h-screen flex items-center bg-[#f2f2f2] overflow-auto">
     <div class="card w-full bg-base-100 shadow-xl image-ful">
       <figure><img src="https://daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.jpg" alt="car!"></figure>
 
