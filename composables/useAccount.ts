@@ -2,6 +2,7 @@ export interface AccountSubscription {
   id: string
   accountId: string
   subscriptionId: string
+  subscription: Subscription
 }
 
 export interface Account {
@@ -25,4 +26,12 @@ export const useCreateAccount = () => {
   }
 
   return { username, createAccount }
+}
+
+export const useAccountSubscriptions = (accountId: string) => {
+  return useRequest<Subscription[]>(`/accounts/${accountId}/subscriptions`)
+}
+
+export const useAccountServers = (accountId: string) => {
+  return useRequest<Server[]>(`/accounts/${accountId}/servers`)
 }
