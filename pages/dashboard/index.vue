@@ -3,7 +3,9 @@ import IntentRequestCreate from '~icons/carbon/intent-request-create'
 import Search from '~icons/carbon/search'
 
 const router = useRouter()
-const { data } = useAccounts()
+const { data, execute } = useAccounts()
+
+const visible = ref(false)
 </script>
 
 <template>
@@ -17,25 +19,21 @@ const { data } = useAccounts()
             </button>
 
             <button class="btn btn-circle flex">
-              <IntentRequestCreate class="text-lg" />
+              <IntentRequestCreate class="text-lg" @click="visible = true" />
             </button>
           </div>
 
-          <AccountCard v-for="account in data" :key="account.id" :account="account" class="mx-4" @click="router.push({ name: 'account-id', params: { id: account.id }})" />
-          <AccountCard v-for="account in data" :key="account.id" :account="account" class="mx-4" />
-          <AccountCard v-for="account in data" :key="account.id" :account="account" class="mx-4" />
-          <AccountCard v-for="account in data" :key="account.id" :account="account" class="mx-4" />
-          <AccountCard v-for="account in data" :key="account.id" :account="account" class="mx-4" />
-          <AccountCard v-for="account in data" :key="account.id" :account="account" class="mx-4" />
-          <AccountCard v-for="account in data" :key="account.id" :account="account" class="mx-4" />
-          <AccountCard v-for="account in data" :key="account.id" :account="account" class="mx-4" />
-          <AccountCard v-for="account in data" :key="account.id" :account="account" class="mx-4" />
-          <AccountCard v-for="account in data" :key="account.id" :account="account" class="mx-4" />
-          <AccountCard v-for="account in data" :key="account.id" :account="account" class="mx-4" />
-          <AccountCard v-for="account in data" :key="account.id" :account="account" class="mx-4" />
-          <AccountCard v-for="account in data" :key="account.id" :account="account" class="mx-4" />
+          <AccountCard
+            v-for="account in data"
+            :key="account.id"
+            :account="account"
+            class="mx-4"
+            @click="router.push({ name: 'account-id', params: { id: account.id }})"
+          />
         </div>
       </div>
     </div>
+
+    <AccountCreate v-model:visible="visible" @after-close="execute" />
   </NuxtLayout>
 </template>

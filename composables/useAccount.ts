@@ -15,3 +15,14 @@ export interface Account {
 export const useAccounts = () => {
   return useRequest<Account[]>('/accounts')
 }
+
+export const useCreateAccount = () => {
+  const username = ref('')
+
+  const createAccount = async () => {
+    if (!username.value) { return }
+    await useRequest('/accounts', { method: 'post', body: { username: username.value } })
+  }
+
+  return { username, createAccount }
+}
