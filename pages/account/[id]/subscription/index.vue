@@ -15,6 +15,14 @@ const { data } = useAccountSubscriptions(route.params.id as string)
         <SubscriptionCard />
       </DaisyCarouselItem>
 
+      <DaisyCarouselItem v-for="item in data" :key="item.id">
+        <SubscriptionCard />
+      </DaisyCarouselItem>
+
+      <DaisyCarouselItem v-for="item in data" :key="item.id">
+        <SubscriptionCard />
+      </DaisyCarouselItem>
+
       <DaisyCarouselItem>
         <SubscriptionCard class="flex w-full h-full items-center justify-center bg-gradient-to-br from-primary to-violet-500">
           <button class="btn btn-square btn-lg shadow-xl" @click="visible.create = true">
