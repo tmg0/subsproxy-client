@@ -8,8 +8,8 @@ const { data } = useAccounts()
 
 <template>
   <NuxtLayout name="basic">
-    <div class="flex-1 overflow-hidden flex flex-col relative">
-      <div class="box-border flex-1 overflow-auto">
+    <div class="flex-1 flex flex-col">
+      <div class="box-border flex-1">
         <div class="flex flex-col gap-3 pb-40">
           <div class="mx-4 flex items-center justify-end">
             <button class="btn btn-circle flex">

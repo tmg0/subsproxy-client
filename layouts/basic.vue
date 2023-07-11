@@ -11,7 +11,7 @@ const onSignOut = async () => {
 </script>
 
 <template>
-  <div class="flex w-screen h-screen overflow-hidden flex-col bg-[#f2f2f2]">
+  <div class="flex w-screen h-screen flex-col bg-[#f2f2f2]">
     <div class="p-4 flex w-full items-center justify-between fixed top-0 h-20 z-10" :style="{ backgroundImage: 'rgb(248, 247, 252, 0.5)', backdropFilter: 'blur(10px)' }">
       <div class="dropdown">
         <label tabindex="0" class="btn btn-circle text-lg m-1"><Menu /></label>
@@ -30,7 +30,7 @@ const onSignOut = async () => {
       </div>
     </div>
 
-    <div class="pt-20 box-border absolute top-0 left-0 right-0 bottom-0 overflow-auto">
+    <div class="pt-20 box-border">
       <slot />
     </div>
   </div>
