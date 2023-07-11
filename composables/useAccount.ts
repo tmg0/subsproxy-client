@@ -28,6 +28,18 @@ export const useCreateAccount = () => {
   return { username, createAccount }
 }
 
+export const useBindSubscription = (accountId: string) => {
+  const subscriptionId = ref('')
+
+  const bindSubscription = async () => {
+    if (!subscriptionId.value) { return }
+    const body = { subscriptionId: subscriptionId.value, accountId }
+    await useRequest(`/accounts/${accountId}/subscriptions`, { method: 'post', body })
+  }
+
+  return { subscriptionId, bindSubscription }
+}
+
 export const useAccountSubscriptions = (accountId: string) => {
   return useRequest<Subscription[]>(`/accounts/${accountId}/subscriptions`)
 }

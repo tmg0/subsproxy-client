@@ -23,7 +23,7 @@ const onClose = () => {
 <template>
   <dialog ref="modal" class="modal">
     <div class="modal-box">
-      <h3 class="font-bold text-lg">
+      <h3 class="font-bold text-lg uppercase">
         {{ title }}
       </h3>
       <p class="py-4">

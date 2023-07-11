@@ -5,3 +5,7 @@ export interface Subscription {
   createdAt: string
   updatedAt: string
 }
+
+export const useSubscriptions = () => {
+  return useRequest<Subscription[]>('/subscriptions')
+}
