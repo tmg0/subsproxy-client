@@ -35,3 +35,7 @@ export const useAccountSubscriptions = (accountId: string) => {
 export const useAccountServers = (accountId: string) => {
   return useRequest<Server[]>(`/accounts/${accountId}/servers`)
 }
+
+export const useAccountDevices = (accountId: string) => {
+  return useRequest<Device[]>(`/accounts/${accountId}/devices`)
+}

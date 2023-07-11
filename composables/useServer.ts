@@ -5,3 +5,7 @@ export interface Server {
   createdAt: string
   updatedAt: string
 }
+
+export const useServerType = () => {
+
+}
