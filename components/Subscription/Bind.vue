@@ -7,7 +7,7 @@ const emit = defineEmits(['update:visible', 'afterClose'])
 
 const { data } = useSubscriptions()
 const route = useRoute()
-const { subscriptionId, bindSubscription } = useBindSubscription(route.params.id)
+const { subscriptionId, bindSubscription } = useBindSubscription(route.params.id as string)
 
 const v = computed({
   get: () => props.visible,
@@ -21,6 +21,7 @@ watch(v, (value) => {
 const onBindSubscription = async () => {
   await bindSubscription()
   v.value = false
+  emit('afterClose')
 }
 </script>
 

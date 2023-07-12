@@ -1,3 +1,7 @@
+import { Device } from './useDevice'
+import { Server } from './useServer'
+import { Subscription } from './useSubscription'
+
 export interface AccountSubscription {
   id: string
   accountId: string
@@ -31,13 +35,17 @@ export const useCreateAccount = () => {
 export const useBindSubscription = (accountId: string) => {
   const subscriptionId = ref('')
 
-  const bindSubscription = async () => {
+  const bindSubscription = () => {
     if (!subscriptionId.value) { return }
     const body = { subscriptionId: subscriptionId.value, accountId }
-    await useRequest(`/accounts/${accountId}/subscriptions`, { method: 'post', body })
+    return useRequest(`/accounts/${accountId}/subscriptions`, { method: 'post', body })
   }
 
   return { subscriptionId, bindSubscription }
+}
+
+export const useUnbindSubscription = (accountId: string) => {
+  return useRequest<Subscription[]>(`/accounts/${accountId}/subscriptions`, { method: 'delete' })
 }
 
 export const useAccountSubscriptions = (accountId: string) => {
