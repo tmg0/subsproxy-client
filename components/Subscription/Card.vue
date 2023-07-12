@@ -41,12 +41,12 @@ const showMore = computed(() => {
         </div>
 
         <div class="stats shadow-xl bg-black/10 text-white">
-          <div class="stat flex flex-col w-full gap-2">
+          <div class="stat flex flex-col w-full gap-1">
             <div class="stat-title text-white/75">
               Total used accounts
             </div>
 
-            <div>
+            <div class="my-1">
               <div class="avatar-group -space-x-6">
                 <div v-for="account in subscription?.accountSubscription" :key="account.id" class="avatar placeholder border">
                   <div class="font-bold text-2xl w-12 bg-gradient-to-br from-emerald-500 to-sky-500 text-white uppercase">
