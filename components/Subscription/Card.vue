@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useDateFormat } from '@vueuse/core'
 import Close from '~icons/carbon/close'
 
 const props = defineProps<{
@@ -62,7 +63,7 @@ const showMore = computed(() => {
             </div>
 
             <div class="stat-desc text-white/75">
-              Belongs to current subscription
+              <span>Updated at {{ useDateFormat(subscription?.updatedAt, 'YYYY-MM-DD HH:mm:ss') }}</span>
             </div>
           </div>
         </div>
