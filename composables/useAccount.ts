@@ -29,7 +29,8 @@ export const useBindSubscription = (accountId: string) => {
   return { subscriptionId, bindSubscription }
 }
 
-export const useUnbindSubscription = (accountId: string) => {
+export const useUnbindSubscription = (subscriptionId: string, accountId?: string) => {
+  if (!accountId) { return }
   return useRequest<Subscription[]>(`/accounts/${accountId}/subscriptions`, { method: 'delete' })
 }
 

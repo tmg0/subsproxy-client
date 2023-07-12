@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const props = withDefaults(defineProps<{
   visible: boolean,
-  account?: Account
+  account?: { id: string }
   subscription?: Subscription
 }>(), { visible: false, account: undefined, subscription: undefined })
 
@@ -14,7 +14,7 @@ const v = computed({
 
 const onUnbindSubscription = async () => {
   if (!props.subscription) { return }
-  await useUnbindSubscription(props.subscription.id)
+  await useUnbindSubscription(props.subscription.id, props?.account?.id)
   v.value = false
   emit('afterClose')
 }

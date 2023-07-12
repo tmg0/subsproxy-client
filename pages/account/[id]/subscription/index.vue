@@ -6,10 +6,12 @@ const selected = ref<Subscription>()
 const visible = ref({ create: false, delete: false })
 const { data, execute } = useAccountSubscriptions(route.params.id as string)
 
-const onShowUnbind = (subscription: Subscription) => {
+const onShowUnbind = (subscription?: Subscription) => {
   selected.value = subscription
   visible.value.delete = true
 }
+
+const account = computed(() => ({ id: route.params.id as string }))
 </script>
 
 <template>
@@ -24,11 +26,11 @@ const onShowUnbind = (subscription: Subscription) => {
       </DaisyCarouselItem>
 
       <DaisyCarouselItem v-for="(item, index) in data" :key="item.id" :index="index">
-        <SubscriptionCard :subscription="item.subscription" @delete="onShowUnbind" />
+        <SubscriptionCard :subscription="item.subscription" @delete="onShowUnbind(item.subscription)" />
       </DaisyCarouselItem>
     </DaisyCarousel>
 
     <SubscriptionBind v-model:visible="visible.create" @after-close="execute" />
-    <SubscriptionUnbind v-model:visible="visible.delete" :subscription="selected" @after-close="execute" />
+    <SubscriptionUnbind v-model:visible="visible.delete" :subscription="selected" :account="account" @after-close="execute" />
   </div>
 </template>
