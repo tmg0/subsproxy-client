@@ -41,7 +41,7 @@ const tabs = [
       </div>
     </div>
 
-    <div class="fixed right-4 bottom-20 bg-white rounded-2xl overflow-hidden shadow-xl">
+    <div class="fixed right-4 bottom-20 bg-white rounded-2xl">
       <div class="join join-vertical">
         <button class="btn btn-ghost no-animation join-item">
           <CopyLink class="text-base" />
