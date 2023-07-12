@@ -24,7 +24,7 @@ const onShowUnbind = (subscription: Subscription) => {
       </DaisyCarouselItem>
 
       <DaisyCarouselItem v-for="(item, index) in data" :key="item.id" :index="index">
-        <SubscriptionCard @delete="onShowUnbind" />
+        <SubscriptionCard :subscription="item.subscription" @delete="onShowUnbind" />
       </DaisyCarouselItem>
     </DaisyCarousel>
 

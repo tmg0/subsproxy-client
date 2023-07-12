@@ -7,6 +7,7 @@ definePageMeta({
 })
 
 const route = useRoute()
+const { data } = useAccount(route.params.id as string)
 
 const tabs = [
   { key: 'account-id-subscription', to: { name: 'account-id-subscription' }, label: 'subscription' },
@@ -17,20 +18,27 @@ const tabs = [
 
 <template>
   <NuxtLayout>
-    <div class="p-4 pt-0">
-      <div class="tabs flex">
-        <NuxtLink
-          v-for="tab in tabs"
-          :key="tab.key"
-          :to="tab.to"
-          class="tab tab-bordered flex-1 uppercase"
-          :class="{ 'tab-active': route.name === tab.key }"
-        >
-          {{ tab.label }}
-        </NuxtLink>
+    <div class="p-4 pt-0 w-full flex flex-col gap-4">
+      <div class="text-4xl font-light uppercase">
+        <span class="mr-2">#</span>
+        <span>{{ data?.username }}</span>
       </div>
 
-      <NuxtPage />
+      <div>
+        <div class="tabs flex">
+          <NuxtLink
+            v-for="tab in tabs"
+            :key="tab.key"
+            :to="tab.to"
+            class="tab tab-bordered flex-1 uppercase"
+            :class="{ 'tab-active': route.name === tab.key }"
+          >
+            {{ tab.label }}
+          </NuxtLink>
+        </div>
+
+        <NuxtPage />
+      </div>
     </div>
 
     <div class="fixed right-4 bottom-20 bg-white rounded-2xl overflow-hidden shadow-xl">

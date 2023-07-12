@@ -1,20 +1,5 @@
-import { Device } from './useDevice'
-import { Server } from './useServer'
-import { Subscription } from './useSubscription'
-
-export interface AccountSubscription {
-  id: string
-  accountId: string
-  subscriptionId: string
-  subscription: Subscription
-}
-
-export interface Account {
-  id: string
-  username: string
-  createdAt: string
-  updatedAt: string
-  accountSubscription?: AccountSubscription[]
+export const useAccount = (accountId: string) => {
+  return useRequest<Account>(`/accounts/${accountId}`)
 }
 
 export const useAccounts = () => {
@@ -49,7 +34,7 @@ export const useUnbindSubscription = (accountId: string) => {
 }
 
 export const useAccountSubscriptions = (accountId: string) => {
-  return useRequest<Subscription[]>(`/accounts/${accountId}/subscriptions`)
+  return useRequest<AccountSubscription[]>(`/accounts/${accountId}/subscriptions`)
 }
 
 export const useAccountServers = (accountId: string) => {

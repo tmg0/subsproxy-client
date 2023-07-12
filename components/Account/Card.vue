@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { Account } from '../../composables/useAccount'
-
 defineProps<{
   account: Account
 }>()
