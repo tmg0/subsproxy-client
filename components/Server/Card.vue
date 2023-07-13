@@ -3,11 +3,15 @@ import Wikis from '~icons/carbon/wikis'
 import Renew from '~icons/carbon/renew'
 import TrashCan from '~icons/carbon/trash-can'
 
-defineProps<{
+const props = defineProps<{
   server: Server
 }>()
 
 const emit = defineEmits(['delete'])
+
+const serverConf = computed(() => {
+  return parseServerConf(props.server) || {}
+})
 </script>
 
 <template>
@@ -23,7 +27,7 @@ const emit = defineEmits(['delete'])
 
           <div class="flex flex-col gap-1">
             <div class="text-sm leading-4">
-              {{ parseServerConf(server).address }}
+              {{ serverConf.address }}
             </div>
             <div class="text-black/25 text-xs leading-3">
               {{ server.address?.split('://')[0] || '' }} / none

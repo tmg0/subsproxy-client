@@ -53,5 +53,5 @@ export const useAccountServers = (accountId: string) => {
 }
 
 export const useAccountDevices = (accountId: string) => {
-  return useRequest<Device[]>(`/accounts/${accountId}/devices`)
+  return useRequest<AccountDevice[]>(`/accounts/${accountId}/devices`)
 }

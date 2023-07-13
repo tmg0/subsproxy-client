@@ -48,7 +48,7 @@ const onCopyLink = () => {
       </div>
     </div>
 
-    <div class="fixed right-6 bottom-20 shadow-xl">
+    <div class="fixed right-6 bottom-20 shadow-xl z-10">
       <div class="join join-vertical">
         <button :disabled="!isSupported" class="btn bg-white no-animation join-item" @click="onCopyLink">
           <CopyLink class="text-base" />
