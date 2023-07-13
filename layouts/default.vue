@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Menu from '~icons/carbon/menu'
 import Logout from '~icons/carbon/logout'
+import LogoGithub from '~icons/carbon/logo-github'
 
 const router = useRouter()
 
@@ -28,12 +29,20 @@ const onSignOut = async () => {
       <slot />
     </div>
 
-    <DaisyDrawer v-model:visible="visible">
-      <ul class="menu p-4">
-        <li><a class="uppercase">dashboard</a></li>
-        <li><a class="uppercase">subscription</a></li>
-        <li><a class="uppercase">server</a></li>
-      </ul>
+    <DaisyDrawer v-model:visible="visible" width="75%">
+      <div class="p-4">
+        <div class="flex justify-end">
+          <button class="btn btn-circle">
+            <LogoGithub class="text-lg text-gray-500" />
+          </button>
+        </div>
+
+        <ul class="menu">
+          <li><a class="uppercase">dashboard</a></li>
+          <li><a class="uppercase">subscription</a></li>
+          <li><a class="uppercase">server</a></li>
+        </ul>
+      </div>
 
       <template #footer>
         <div class="flex justify-center p-4">

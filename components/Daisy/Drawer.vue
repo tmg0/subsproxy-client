@@ -27,7 +27,7 @@ onClickOutside(checkbox, () => {
     <div class="drawer-side z-10">
       <label for="my-drawer" class="drawer-overlay" />
 
-      <div class="h-full bg-base-200 text-base-content" :style="{ width }">
+      <div class="h-full bg-base-200 text-base-content relative" :style="{ width }">
         <slot />
 
         <div class="absolute bottom-0 left-0 right-0">
