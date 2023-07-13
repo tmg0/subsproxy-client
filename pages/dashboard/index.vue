@@ -25,7 +25,7 @@ const visible = ref(false)
 
           <AccountCard
             v-for="(account, index) in data"
-            :key="account.id"
+            :key="account?.id || index"
             v-motion
             :initial="{ opacity: 0, y: 50 }"
             :enter="{ opacity: 1, y: 0, scale: 1 }"

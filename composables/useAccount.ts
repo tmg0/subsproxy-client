@@ -34,6 +34,16 @@ export const useUnbindSubscription = (subscriptionId: string, accountId?: string
   return useRequest<Subscription[]>(`/accounts/${accountId}/subscriptions`, { method: 'delete' })
 }
 
+export const useBindServer = (accountId: string) => {
+  if (!accountId) { return }
+  return useRequest<Subscription[]>(`/accounts/${accountId}/servers`, { method: 'post' })
+}
+
+export const useUnbindServer = (serverId: string, accountId?: string) => {
+  if (!serverId || !accountId) { return }
+  return useRequest<Subscription[]>(`/accounts/${accountId}/servers/${serverId}`, { method: 'delete' })
+}
+
 export const useAccountSubscriptions = (accountId: string) => {
   return useRequest<AccountSubscription[]>(`/accounts/${accountId}/subscriptions`)
 }

@@ -26,7 +26,7 @@ const emit = defineEmits(['delete'])
               {{ parseServerConf(server).address }}
             </div>
             <div class="text-black/25 text-xs leading-3">
-              {{ server.address.split('://')[0] }} / none
+              {{ server.address?.split('://')[0] || '' }} / none
             </div>
           </div>
         </div>

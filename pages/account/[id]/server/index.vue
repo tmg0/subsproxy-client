@@ -2,14 +2,21 @@
 import Add from '~icons/carbon/add'
 
 const route = useRoute()
-const { data } = useAccountServers(route.params.id as string)
+const { data, execute } = useAccountServers(route.params.id as string)
 
 const selected = ref<Server>()
 const visible = ref({ create: false, delete: false })
 
+const account = computed(() => ({ id: route.params.id as string }))
+
 const onShowUnbind = (server?: Server) => {
   selected.value = server
   visible.value.delete = true
+}
+
+const onBindServer = async () => {
+  await useBindServer(account.value.id)
+  await execute()
 }
 </script>
 
@@ -22,6 +29,7 @@ const onShowUnbind = (server?: Server) => {
         :initial="{ opacity: 0, y: 50 }"
         :enter="{ opacity: 1, y: 0, scale: 1 }"
         class="card h-14 shadow-xl cursor-pointer bg-white flex items-center justify-center"
+        @click="onBindServer"
       >
         <Add class="text-3xl" />
       </div>
@@ -34,10 +42,10 @@ const onShowUnbind = (server?: Server) => {
         :enter="{ opacity: 1, y: 0, scale: 1 }"
         :delay="(index + 1) * 50"
         :server="server"
-        @delete="onShowUnbind"
+        @delete="onShowUnbind(server)"
       />
     </div>
 
-    <ServerUnbind v-model:visible="visible.delete" />
+    <ServerUnbind v-model:visible="visible.delete" :account="account" :server="selected" @after-close="execute" />
   </div>
 </template>

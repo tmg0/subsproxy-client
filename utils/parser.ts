@@ -1,5 +1,5 @@
-export const isVmess = (address: string) => address.startsWith(ServerPrefix.VMESS)
-export const isShadowsocks = (address: string) => address.startsWith(ServerPrefix.SHADOWSOCKS)
+export const isVmess = (address?: string) => address?.startsWith(ServerPrefix.VMESS)
+export const isShadowsocks = (address?: string) => address?.startsWith(ServerPrefix.SHADOWSOCKS)
 
 export const parseVmess = (address: string): ServerConf => {
   const encode = address.replace(ServerPrefix.VMESS, '')

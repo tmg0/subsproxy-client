@@ -12,8 +12,9 @@ const v = computed({
   set: (value) => { emit('update:visible', value) }
 })
 
-const onUnbindServer = () => {
+const onUnbindServer = async () => {
   if (!props.server) { return }
+  await useUnbindServer(props.server.id, props.account?.id)
   v.value = false
   emit('afterClose')
 }
