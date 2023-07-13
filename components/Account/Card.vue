@@ -7,7 +7,7 @@ const emit = defineEmits(['click'])
 </script>
 
 <template>
-  <div :key="account.id" class="card shadow-xl cursor-pointer bg-white" @click="emit('click')">
+  <div v-motion :tapped="{ scale: 0.9 }" class="card shadow-xl cursor-pointer bg-white" @click="emit('click')">
     <div class="p-3 flex items-center gap-4">
       <div class="avatar placeholder">
         <div class="font-bold text-2xl w-12 rounded-xl bg-gradient-to-br from-sky-500 to-primary text-white uppercase">

@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   ssr: false,
   devtools: { enabled: true },
-  modules: ['@nuxtjs/tailwindcss', 'unplugin-icons/nuxt'],
+  modules: ['@nuxtjs/tailwindcss', 'unplugin-icons/nuxt', '@vueuse/motion/nuxt'],
   vite: {
     server: {
       proxy: {
