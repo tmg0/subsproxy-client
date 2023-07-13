@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useClipboard } from '@vueuse/core'
 import CopyLink from '~icons/carbon/copy-link'
 import TrashCan from '~icons/carbon/trash-can'
 
@@ -7,6 +8,7 @@ definePageMeta({
 })
 
 const route = useRoute()
+const { copy, isSupported } = useClipboard()
 const { data } = useAccount(route.params.id as string)
 
 const tabs = [
@@ -14,6 +16,11 @@ const tabs = [
   { key: 'account-id-server', to: { name: 'account-id-server' }, label: 'server' },
   { key: 'account-id-device', to: { name: 'account-id-device' }, label: 'device' }
 ]
+
+const onCopyLink = () => {
+  if (!isSupported.value) { return }
+  copy('')
+}
 </script>
 
 <template>
@@ -43,7 +50,7 @@ const tabs = [
 
     <div class="fixed right-6 bottom-20 shadow-xl">
       <div class="join join-vertical">
-        <button class="btn bg-white no-animation join-item">
+        <button :disabled="!isSupported" class="btn bg-white no-animation join-item" @click="onCopyLink">
           <CopyLink class="text-base" />
         </button>
 
