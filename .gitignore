@@ -22,5 +22,8 @@ logs
 .env.*
 !.env.example
 
-# dude build files
+# Dude build files
 dude.config.*
+
+# Nginx config files
+nginx.conf
