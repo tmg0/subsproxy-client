@@ -27,7 +27,7 @@ const visible = ref(false)
             v-for="(account, index) in data"
             :key="account.id"
             v-motion
-            :initial="{ opacity: 0, y: 100 }"
+            :initial="{ opacity: 0, y: 50 }"
             :enter="{ opacity: 1, y: 0, scale: 1 }"
             :delay="index * 50"
             :account="account"
