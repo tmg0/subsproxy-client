@@ -2,6 +2,7 @@
 import Menu from '~icons/carbon/menu'
 import Logout from '~icons/carbon/logout'
 import LogoGithub from '~icons/carbon/logo-github'
+import UserAvatarFilled from '~icons/carbon/user-avatar-filled'
 
 const router = useRouter()
 
@@ -30,19 +31,20 @@ const onSignOut = async () => {
     </div>
 
     <DaisyDrawer v-model:visible="visible" width="75%">
-      <div class="p-4">
-        <div class="flex justify-end">
-          <button class="btn btn-circle">
-            <LogoGithub class="text-lg text-gray-500" />
-          </button>
-        </div>
+      <div class="p-4 pb-0 flex justify-between">
+        <div class="flex gap-4">
+          <LogoGithub class="text-lg text-gray-500" />
 
-        <ul class="menu">
-          <li><a class="uppercase">dashboard</a></li>
-          <li><a class="uppercase">subscription</a></li>
-          <li><a class="uppercase">server</a></li>
-        </ul>
+          <UserAvatarFilled class="text-lg text-gray-500" />
+        </div>
       </div>
+
+      <ul class="menu mt-2">
+        <li><a class="uppercase active">dashboard</a></li>
+        <li><a class="uppercase">subscription</a></li>
+        <li><a class="uppercase">server</a></li>
+        <li><a class="uppercase">setting</a></li>
+      </ul>
 
       <template #footer>
         <div class="flex justify-center p-4">
