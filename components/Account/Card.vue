@@ -18,8 +18,8 @@ const emit = defineEmits(['click'])
       <div class="h-12 text-sm flex-1 flex justify-between">
         <div class="h-full flex flex-col gap-2 justify-center">
           <div class="flex items-center gap-2">
-            <div class="w-2 h-2 bg-accent/30 rounded-full flex items-center justify-center">
-              <div class="w-1 h-1 bg-accent rounded-full" />
+            <div class="w-3 h-3 bg-accent/30 rounded-full flex items-center justify-center">
+              <div class="w-[6px] h-[6px] bg-accent rounded-full" />
             </div>
 
             <div class="font-bold uppercase">
