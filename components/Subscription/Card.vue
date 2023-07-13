@@ -8,9 +8,16 @@ const props = defineProps<{
 
 const emit = defineEmits(['delete'])
 
-const showMore = computed(() => {
+const limit = 5
+
+const moreCount = computed(() => {
   const length = props?.subscription?.accountSubscription?.length || 0
-  return length > 3
+  return length - limit
+})
+
+const updatedAt = computed(() => {
+  const formatted = useDateFormat(props.subscription?.updatedAt, 'YYYY-MM-DD HH:mm:ss')
+  return formatted.value
 })
 </script>
 
@@ -47,23 +54,23 @@ const showMore = computed(() => {
             </div>
 
             <div class="my-1">
-              <div class="avatar-group -space-x-6">
-                <div v-for="account in subscription?.accountSubscription" :key="account.id" class="avatar placeholder border">
+              <div class="avatar-group -space-x-5">
+                <div v-for="account in subscription?.accountSubscription?.slice(0, limit)" :key="account.id" class="avatar placeholder border">
                   <div class="font-bold text-2xl w-12 bg-gradient-to-br from-emerald-500 to-sky-500 text-white uppercase">
                     <span>{{ account.account.username.split('.').at(-1)?.at(0) }}</span>
                   </div>
                 </div>
 
-                <div v-show="showMore" class="avatar placeholder">
+                <div v-show="moreCount > 0" class="avatar placeholder border">
                   <div class="w-12 bg-neutral-focus text-neutral-content">
-                    <span>+99</span>
+                    <span>+{{ moreCount }}</span>
                   </div>
                 </div>
               </div>
             </div>
 
             <div class="stat-desc text-white/75">
-              <span>Updated at {{ useDateFormat(subscription?.updatedAt, 'YYYY-MM-DD HH:mm:ss') }}</span>
+              <span>Updated at {{ updatedAt }}</span>
             </div>
           </div>
         </div>
