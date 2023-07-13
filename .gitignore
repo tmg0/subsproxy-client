@@ -22,8 +22,11 @@ logs
 .env.*
 !.env.example
 
-# Dude build files
+# Docker build files
+Dockerfile
 dude.config.*
 
 # Nginx config files
 nginx.conf
+*.crt
+*.key
