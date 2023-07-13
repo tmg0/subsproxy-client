@@ -36,3 +36,7 @@ interface Server {
   createdAt: string
   updatedAt: string
 }
+
+interface ServerConf {
+  address: string
+}
