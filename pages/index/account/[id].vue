@@ -4,7 +4,7 @@ import CopyLink from '~icons/carbon/copy-link'
 import TrashCan from '~icons/carbon/trash-can'
 
 definePageMeta({
-  redirect: { name: 'account-id-subscription' }
+  redirect: { name: 'index-account-id-subscription' }
 })
 
 const route = useRoute()
@@ -12,9 +12,9 @@ const { copy, isSupported } = useClipboard()
 const { data } = useAccount(route.params.id as string)
 
 const tabs = [
-  { key: 'account-id-subscription', to: { name: 'account-id-subscription' }, label: 'subscription' },
-  { key: 'account-id-server', to: { name: 'account-id-server' }, label: 'server' },
-  { key: 'account-id-device', to: { name: 'account-id-device' }, label: 'device' }
+  { key: 'index-account-id-subscription', label: 'subscription' },
+  { key: 'index-account-id-server', label: 'server' },
+  { key: 'index-account-id-device', label: 'device' }
 ]
 
 const onCopyLink = () => {
@@ -24,7 +24,7 @@ const onCopyLink = () => {
 </script>
 
 <template>
-  <NuxtLayout>
+  <div>
     <div class="p-4 pt-0 w-full flex flex-col gap-4">
       <div class="text-4xl font-light uppercase">
         <span class="mr-2">#</span>
@@ -36,7 +36,7 @@ const onCopyLink = () => {
           <NuxtLink
             v-for="tab in tabs"
             :key="tab.key"
-            :to="tab.to"
+            :to="{ name: tab.key }"
             class="tab tab-bordered flex-1 uppercase"
             :class="{ 'tab-active': route.name === tab.key }"
           >
@@ -59,5 +59,5 @@ const onCopyLink = () => {
         </button>
       </div>
     </div>
-  </NuxtLayout>
+  </div>
 </template>

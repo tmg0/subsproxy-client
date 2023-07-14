@@ -7,7 +7,7 @@ const router = useRouter()
 
 const onSignIn = async () => {
   await signIn()
-  router.push({ name: 'dashboard' })
+  router.push({ name: 'index-dashboard' })
 }
 </script>
 

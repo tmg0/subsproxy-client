@@ -3,6 +3,7 @@ export default defineNuxtConfig({
   ssr: false,
   devtools: { enabled: true },
   modules: ['@nuxtjs/tailwindcss', 'unplugin-icons/nuxt', '@vueuse/motion/nuxt'],
+  imports: { dirs: ['./stores'] },
   vite: {
     server: {
       proxy: {

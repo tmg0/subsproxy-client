@@ -23,7 +23,7 @@ onMounted(async () => {
 
 <template>
   <div class="w-full relative">
-    <div ref="carousel" class="carousel carousel-center w-full max-w-md p-4 space-x-4 bg-white shadow-xl rounded-box my-4">
+    <div ref="carousel" class="carousel carousel-center w-full p-4 space-x-4 bg-white shadow-xl rounded-box my-4">
       <slot />
     </div>
   </div>

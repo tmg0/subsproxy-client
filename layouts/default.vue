@@ -4,12 +4,26 @@ import Logout from '~icons/carbon/logout'
 import LogoGithub from '~icons/carbon/logo-github'
 import UserAvatarFilled from '~icons/carbon/user-avatar-filled'
 
+const route = useRoute()
 const router = useRouter()
 
 const visible = ref(false)
 
+const menus = [
+  { key: 'index-dashboard', label: 'dashboard' },
+  { key: 'index-subscription', label: 'subscription' },
+  { key: 'index-server', label: 'server' },
+  { key: 'index-setting', label: 'setting' }
+]
+
+const onNavi = (name: string) => {
+  visible.value = false
+  router.push({ name })
+}
+
 const onSignOut = async () => {
   await useSignOut()
+  visible.value = false
   router.push({ name: 'sign-in' })
 }
 </script>
@@ -21,7 +35,7 @@ const onSignOut = async () => {
         <Menu />
       </button>
 
-      <div class="font-bold uppercase cursor-pointer" @click="router.push({ name: 'dashboard' })">
+      <div class="font-bold uppercase cursor-pointer" @click="router.push({ name: 'index-dashboard' })">
         Subsproxy
       </div>
     </div>
@@ -40,10 +54,11 @@ const onSignOut = async () => {
       </div>
 
       <ul class="menu mt-2">
-        <li><a class="uppercase active">dashboard</a></li>
-        <li><a class="uppercase">subscription</a></li>
-        <li><a class="uppercase">server</a></li>
-        <li><a class="uppercase">setting</a></li>
+        <li v-for="item in menus" :key="item.key" class="mb-px">
+          <a class="uppercase" :class="{ active: route.name === item.key }" @click="onNavi(item.key)">
+            {{ item.label }}
+          </a>
+        </li>
       </ul>
 
       <template #footer>

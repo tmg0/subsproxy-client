@@ -14,16 +14,10 @@ interface Account {
   accountSubscription?: AccountSubscription[]
 }
 
-interface AccountDevice {
-  id: string
-  accountId: string
-  deviceId: string
-  device: Device
-}
-
 interface Device {
   id: string
-  ua: string
+  accountId: string
+  ua?: string
 }
 
 interface Subscription {

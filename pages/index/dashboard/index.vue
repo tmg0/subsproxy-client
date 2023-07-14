@@ -9,7 +9,7 @@ const visible = ref(false)
 </script>
 
 <template>
-  <NuxtLayout>
+  <div>
     <div class="flex-1 flex flex-col">
       <div class="box-border flex-1">
         <div class="flex flex-col gap-3 pb-40">
@@ -32,12 +32,12 @@ const visible = ref(false)
             :delay="index * 50"
             :account="account"
             class="mx-4"
-            @click="router.push({ name: 'account-id', params: { id: account.id }})"
+            @click="router.push({ name: 'index-account-id', params: { id: account.id }})"
           />
         </div>
       </div>
     </div>
 
     <AccountCreate v-model:visible="visible" @after-close="execute" />
-  </NuxtLayout>
+  </div>
 </template>
