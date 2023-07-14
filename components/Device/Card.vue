@@ -35,7 +35,7 @@ const logo = computed(() => {
 
       <div class="absolute bottom-3 w-full text-center text-xs text-black/25">
         <div>{{ ua?.browser }}</div>
-        <div class="scale-75">
+        <div class="scale-75 truncate">
           {{ ua?.version }}
         </div>
       </div>
