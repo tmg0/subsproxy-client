@@ -19,7 +19,8 @@ const tabs = [
 
 const onCopyLink = () => {
   if (!isSupported.value) { return }
-  copy('')
+  const { protocol, host } = location
+  copy(`${protocol}//${location.host}/api/accounts/${route.params.id}/servers?encode=true`)
 }
 </script>
 

@@ -17,7 +17,7 @@ const logo = computed(() => {
   if (isClash(ua)) { return ClientLogo.CLASH }
   if (isPostman(ua)) { return ClientLogo.POSTMAN }
 
-  return ''
+  return ClientLogo.CHROME
 })
 </script>
 
