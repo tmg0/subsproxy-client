@@ -20,7 +20,7 @@ const onDeleteDevice = async () => {
 </script>
 
 <template>
-  <DaisyModal v-model:visible="v" title="Unbind subscription">
+  <DaisyModal v-model:visible="v" title="Delete device">
     <template #footer>
       <button class="btn" @click.prevent="v = false">
         Close

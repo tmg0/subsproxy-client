@@ -32,6 +32,13 @@ const logo = computed(() => {
         <img v-show="logo" class="block w-16 h-16" :src="logo" alt="logo">
         <span v-show="!ua" class="loading loading-ring loading-lg text-orange-500" />
       </div>
+
+      <div class="absolute bottom-3 w-full text-center text-xs text-black/25">
+        <div>{{ ua?.browser }}</div>
+        <div class="scale-75">
+          {{ ua?.version }}
+        </div>
+      </div>
     </slot>
   </div>
 </template>
