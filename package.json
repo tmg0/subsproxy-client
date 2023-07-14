@@ -22,7 +22,7 @@
     "@types/node": "^18",
     "daisyui": "^3.1.10",
     "eslint": "^8.44.0",
-    "nuxt": "^3.6.1",
+    "nuxt": "^3.6.2",
     "typescript": "^5.1.6",
     "unplugin-icons": "^0.16.3"
   }
