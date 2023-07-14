@@ -55,3 +55,7 @@ export const useAccountServers = (accountId: string) => {
 export const useAccountDevices = (accountId: string) => {
   return useRequest<Device[]>(`/accounts/${accountId}/devices`)
 }
+
+export const useCreateAccountDevice = (accountId: string) => {
+  return useRequest<void>(`/accounts/${accountId}/devices`, { method: 'post' })
+}

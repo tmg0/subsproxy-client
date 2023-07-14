@@ -63,7 +63,7 @@ const onSignOut = async () => {
 
       <template #footer>
         <div class="flex justify-center p-4">
-          <button class="btn bg-gradient-to-br from-pink-500 to-red-500 text-white" @click="onSignOut">
+          <button class="btn btn-block bg-gradient-to-br from-pink-500 to-red-500 text-white" @click="onSignOut">
             <Logout />
             <span>Sign out</span>
           </button>
