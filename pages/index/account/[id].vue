@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useClipboard } from '@vueuse/core'
-import CopyLink from '~icons/carbon/copy-link'
+import Copy from '~icons/carbon/copy'
 import Checkmark from '~icons/carbon/checkmark'
 import TrashCan from '~icons/carbon/trash-can'
 
@@ -56,7 +56,7 @@ const onCopyLink = () => {
     <div v-motion-fade class="fixed right-6 bottom-20 shadow-xl z-10">
       <div class="join join-vertical bg-white">
         <button class="btn bg-white no-animation join-item" @click="onCopyLink">
-          <component :is="copied ? Checkmark : CopyLink" v-motion-fade class="text-base" />
+          <component :is="copied ? Checkmark : Copy" v-motion-fade class="text-base" />
         </button>
 
         <button class="btn no-animation join-item bg-gradient-to-br from-pink-500 to-red-500 text-white">
