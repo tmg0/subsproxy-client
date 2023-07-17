@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useClipboard } from '@vueuse/core'
 import CopyLink from '~icons/carbon/copy-link'
+import Checkmark from '~icons/carbon/checkmark'
 import TrashCan from '~icons/carbon/trash-can'
 
 definePageMeta({
@@ -10,6 +11,7 @@ definePageMeta({
 const route = useRoute()
 const { copy, isSupported } = useClipboard()
 const { data } = useAccount(route.params.id as string)
+const copied = ref(false)
 
 const tabs = [
   { key: 'index-account-id-subscription', label: 'subscription' },
@@ -18,9 +20,11 @@ const tabs = [
 ]
 
 const onCopyLink = () => {
-  if (!isSupported.value) { return }
+  if (!isSupported.value || copied.value) { return }
   const { protocol, host } = location
-  copy(`${protocol}//${location.host}/api/accounts/${route.params.id}/servers?encode=true`)
+  copy(`${protocol}//${host}/api/accounts/${route.params.id}/servers?encode=true`)
+  copied.value = true
+  setTimeout(() => { copied.value = false }, 1.5 * 1000)
 }
 </script>
 
@@ -49,10 +53,10 @@ const onCopyLink = () => {
       </div>
     </div>
 
-    <div class="fixed right-6 bottom-20 shadow-xl z-10">
+    <div v-motion-fade class="fixed right-6 bottom-20 shadow-xl z-10">
       <div class="join join-vertical bg-white">
         <button class="btn bg-white no-animation join-item" @click="onCopyLink">
-          <CopyLink class="text-base" />
+          <component :is="copied ? Checkmark : CopyLink" v-motion-fade class="text-base" />
         </button>
 
         <button class="btn no-animation join-item bg-gradient-to-br from-pink-500 to-red-500 text-white">
