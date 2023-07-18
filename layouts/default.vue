@@ -44,7 +44,7 @@ const onSignOut = async () => {
       <slot />
     </div>
 
-    <DaisyDrawer v-model:visible="visible" width="75%">
+    <DaisyDrawer v-model:visible="visible" width="256px">
       <div class="p-4 pb-0 flex justify-between">
         <div class="flex gap-4">
           <LogoGithub class="text-lg text-gray-500" />
