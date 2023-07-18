@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "subsproxy-client",
   "private": true,
   "scripts": {
     "build": "nuxt build",
