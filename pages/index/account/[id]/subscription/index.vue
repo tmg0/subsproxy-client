@@ -20,7 +20,7 @@ const enter = { opacity: 1, x: 0, scale: 1 }
 <template>
   <div>
     <DaisyCarousel class="w-full">
-      <DaisyCarouselItem v-motion :initial="initial" :enter="enter" :index="0">
+      <DaisyCarouselItem v-motion :tapped="{ scale: 0.9 }" :initial="initial" :enter="enter" :index="0">
         <SubscriptionCard class="flex h-48 w-72 items-center justify-center bg-gradient-to-br to-sky-500 from-violet-500">
           <button class="btn btn-square btn-lg shadow-xl" @click="visible.create = true">
             <Add class="text-3xl" />
