@@ -37,12 +37,12 @@ const onCopyLink = () => {
       </div>
 
       <div>
-        <div class="tabs flex">
+        <div class="tabs flex w-full flex-nowrap overflow-x-auto">
           <NuxtLink
             v-for="tab in tabs"
             :key="tab.key"
             :to="{ name: tab.key }"
-            class="tab tab-bordered flex-1 uppercase"
+            class="tab tab-bordered flex-1 uppercase snap-center"
             :class="{ 'tab-active': route.name === tab.key }"
           >
             {{ tab.label }}
@@ -66,3 +66,9 @@ const onCopyLink = () => {
     </div>
   </div>
 </template>
+
+<style scoped>
+.tabs {
+  scrollbar-width: none;
+}
+</style>
