@@ -9,6 +9,8 @@ definePageMeta({
 })
 
 const route = useRoute()
+const router = useRouter()
+const visible = ref(false)
 const { copy, isSupported } = useClipboard()
 const { data } = useAccount(route.params.id as string)
 const copied = ref(false)
@@ -59,11 +61,13 @@ const onCopyLink = () => {
           <component :is="copied ? Checkmark : Copy" v-motion-fade class="text-base" />
         </button>
 
-        <button class="btn no-animation join-item bg-gradient-to-br from-pink-500 to-red-500 text-white">
+        <button class="btn no-animation join-item bg-gradient-to-br from-pink-500 to-red-500 text-white" @click="visible = true">
           <TrashCan class="text-base" />
         </button>
       </div>
     </div>
+
+    <AccountDelete v-model:visible="visible" :account="data" @after-close="router.go(-1)" />
   </div>
 </template>
 

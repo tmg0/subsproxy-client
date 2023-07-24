@@ -17,6 +17,10 @@ export const useCreateAccount = () => {
   return { username, createAccount }
 }
 
+export const useDeleteAccount = (accountId: string) => {
+  return useRequest<void>(`/accounts/${accountId}`, { method: 'delete' })
+}
+
 export const useBindSubscription = (accountId: string) => {
   const subscriptionId = ref('')
 
