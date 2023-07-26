@@ -10,7 +10,7 @@ specifiers:
   '@vueuse/motion': ^2.0.0
   daisyui: ^3.2.1
   eslint: ^8.44.0
-  go-dude: ^0.3.1
+  go-dude: ^0.3.4
   nanoid: ^4.0.2
   nuxt: ^3.6.2
   typescript: ^5.1.6
@@ -31,7 +31,7 @@ devDependencies:
   '@types/node': 18.16.19
   daisyui: 3.2.1
   eslint: 8.44.0
-  go-dude: 0.3.1
+  go-dude: 0.3.4
   nuxt: 3.6.2_ibd7xretgiuyqjk2tdgqp3dzvy
   typescript: 5.1.6
   unplugin-icons: 0.16.5
@@ -4509,8 +4509,8 @@ packages:
       merge2: 1.4.1
       slash: 4.0.0
 
-  /go-dude/0.3.1:
-    resolution: {integrity: sha512-+Htp7yg+6wBJFWo2MWWvvHD7rXsX0MypODs44X2Y3jzYukTsxO/bbPKe059fuWjmQu0oaLXCMImQ13JedBs9OQ==}
+  /go-dude/0.3.4:
+    resolution: {integrity: sha512-XBV3VOVOHU/RCdeON5sVuYCvzVmIg+nisbH72f8CpSLlqhxwismsrUd8ZCtHaZn7gurOj+1KH+1eFKd/unUhLA==}
     hasBin: true
     dependencies:
       c12: 1.4.2
