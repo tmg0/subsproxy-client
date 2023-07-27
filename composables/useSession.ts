@@ -13,6 +13,4 @@ export const useSignIn = () => {
   return { username, password, signIn }
 }
 
-export const useSignOut = () => {
-  return useStorage.removeItem(StorageKey.ACCESS_TOKEN)
-}
+export const useSignOut = () => useStorage.removeItem(StorageKey.ACCESS_TOKEN)
