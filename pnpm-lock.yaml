@@ -10,7 +10,7 @@ specifiers:
   '@vueuse/motion': ^2.0.0
   daisyui: ^3.2.1
   eslint: ^8.44.0
-  go-dude: ^0.3.15
+  go-dude: ^0.3.18
   nanoid: ^4.0.2
   nuxt: ^3.6.2
   typescript: ^5.1.6
@@ -31,7 +31,7 @@ devDependencies:
   '@types/node': 18.16.19
   daisyui: 3.2.1
   eslint: 8.44.0
-  go-dude: 0.3.15
+  go-dude: 0.3.18
   nuxt: 3.6.2_ibd7xretgiuyqjk2tdgqp3dzvy
   typescript: 5.1.6
   unplugin-icons: 0.16.5
@@ -4509,8 +4509,8 @@ packages:
       merge2: 1.4.1
       slash: 4.0.0
 
-  /go-dude/0.3.15:
-    resolution: {integrity: sha512-c9WyFFag6T9/epuvDdLEdvyrPml+IW2HQTeuEmzDz85VSqDlc03kUr2QOUwCXgC9rOEV3JYtd611Uib6IVyGSg==}
+  /go-dude/0.3.18:
+    resolution: {integrity: sha512-bIJcUT8IdS0Kqm2CXvcAYM7J5aRdJcjkRY1B2GoLOtfmtybKaCs4WEuGhXoVU7u2FLfEgi96NauKyTZZVKwCIw==}
     hasBin: true
     dependencies:
       c12: 1.4.2
@@ -4523,6 +4523,7 @@ packages:
       node-scp: 0.0.22
       node-ssh: 13.1.0
       pathe: 1.1.1
+      semver: 7.5.4
       yaml: 2.3.1
     transitivePeerDependencies:
       - supports-color

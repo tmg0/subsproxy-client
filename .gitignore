@@ -25,6 +25,7 @@ logs
 # Docker build files
 Dockerfile
 dude.config.*
+.images
 
 # Nginx config files
 nginx.conf
