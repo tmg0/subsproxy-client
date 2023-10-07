@@ -1,18 +1,20 @@
 <script setup lang="ts">
-import { join } from 'pathe'
+import { joinURL  } from 'ufo'
 import TrashCan from '~icons/carbon/trash-can'
 
 const route = useRoute()
 const router = useRouter()
 const visible = ref(false)
+const accountId = computed(() => route.params.id as string)
+const account = computed(() => ({ id: accountId.value }))
 const { protocol, host } = location
-const prefix = `${protocol}//${host}/api/accounts/${route.params.id}/servers`
+const prefix = `${protocol}//${host}/api/accounts/${accountId.value}/servers`
 
 const links = [
-  { url: join(prefix, 'default'), label: 'default subscription' },
-  { url: join(prefix, 'clash', 'jms'), label: 'clash for windows' },
-  { url: join(prefix, 'clash', 'bitz'), label: 'clash x' },
-  { url: join(prefix, 'xray'), label: 'v2ray' }
+  { url: joinURL(prefix, 'default'), label: 'default subscription' },
+  { url: joinURL(prefix, 'clash', 'jms'), label: 'clash for windows' },
+  { url: joinURL(prefix, 'clash', 'bitz'), label: 'clash x' },
+  { url: joinURL(prefix, 'xray'), label: 'v2ray' }
 ]
 </script>
 
@@ -39,6 +41,6 @@ const links = [
       <span>Delete this account</span>
     </button>
 
-    <AccountDelete v-model:visible="visible" :account="data" @after-close="router.go(-1)" />
+    <AccountDelete v-model:visible="visible" :account="account" @after-close="router.go(-1)" />
   </div>
 </template>
