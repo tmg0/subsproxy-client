@@ -12,6 +12,7 @@
     "@vueuse/core": "^10.2.1",
     "@vueuse/motion": "^2.0.0",
     "nanoid": "^4.0.2",
+    "pathe": "^1.1.1",
     "unstorage": "^1.8.0"
   },
   "devDependencies": {

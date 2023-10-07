@@ -1,33 +1,17 @@
 <script setup lang="ts">
-import { useClipboard } from '@vueuse/core'
-import Copy from '~icons/carbon/copy'
-import Checkmark from '~icons/carbon/checkmark'
-import TrashCan from '~icons/carbon/trash-can'
-
 definePageMeta({
   redirect: { name: 'index-account-id-subscription' }
 })
 
 const route = useRoute()
-const router = useRouter()
-const visible = ref(false)
-const { copy, isSupported } = useClipboard()
 const { data } = useAccount(route.params.id as string)
-const copied = ref(false)
 
 const tabs = [
-  { key: 'index-account-id-subscription', label: 'subscription' },
-  { key: 'index-account-id-server', label: 'server' },
-  { key: 'index-account-id-device', label: 'device' }
+  { key: 'index-account-id-subscriptions', label: 'subscriptions' },
+  { key: 'index-account-id-servers', label: 'servers' },
+  { key: 'index-account-id-devices', label: 'devices' },
+  { key: 'index-account-id-settings', label: 'settings' }
 ]
-
-const onCopyLink = () => {
-  if (!isSupported.value || copied.value) { return }
-  const { protocol, host } = location
-  copy(`${protocol}//${host}/api/accounts/${route.params.id}/servers?encode=true`)
-  copied.value = true
-  setTimeout(() => { copied.value = false }, 1.5 * 1000)
-}
 </script>
 
 <template>
@@ -39,7 +23,7 @@ const onCopyLink = () => {
       </div>
 
       <div>
-        <div class="tabs flex w-full flex-nowrap overflow-x-auto">
+        <div class="tabs hidden-horizontal-scrollbar flex w-full flex-nowrap overflow-x-auto">
           <NuxtLink
             v-for="tab in tabs"
             :key="tab.key"
@@ -55,24 +39,22 @@ const onCopyLink = () => {
       </div>
     </div>
 
-    <div v-motion-fade class="fixed right-6 bottom-20 shadow-xl z-10">
-      <div class="join join-vertical bg-white">
-        <button class="btn bg-white no-animation join-item" @click="onCopyLink">
-          <component :is="copied ? Checkmark : Copy" v-motion-fade class="text-base" />
-        </button>
-
-        <button class="btn no-animation join-item bg-gradient-to-br from-pink-500 to-red-500 text-white" @click="visible = true">
-          <TrashCan class="text-base" />
-        </button>
-      </div>
-    </div>
-
-    <AccountDelete v-model:visible="visible" :account="data" @after-close="router.go(-1)" />
+   
   </div>
 </template>
 
 <style scoped>
 .tabs {
   scrollbar-width: none;
+}
+
+.hidden-horizontal-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
 }
 </style>
