@@ -14,7 +14,7 @@ const onSignIn = async () => {
 <template>
   <div class="p-4 w-screen h-screen flex items-center bg-[#f2f2f2] overflow-auto">
     <div class="card mx-auto max-w-96 bg-base-100 shadow-xl image-ful">
-      <figure><img src="images/photo-1494232410401-ad00d5433cfa.webp" alt="car!"></figure>
+      <figure><img src="/images/photo-1494232410401-ad00d5433cfa.webp" alt="car!"></figure>
 
       <div class="card-body gap-4">
         <h2 class="card-title uppercase">
