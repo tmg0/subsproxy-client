@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
-  redirect: { name: 'index-account-id-subscription' }
+  redirect: { name: 'index-account-id-subscriptions' }
 })
 
 const route = useRoute()
