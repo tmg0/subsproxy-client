@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const emit = defineEmits(['done'])
+const { upload } = useCos()
 
 const domRef = ref()
 
@@ -7,12 +8,11 @@ const onClick = () => {
   domRef.value?.click()
 }
 
-const handleFileUpload = (event: any) => {
+const handleFileUpload = async (event: any) => {
   const file = event.target?.files?.[0]
   if (!file) { return }
-  const reader = new FileReader()
-  reader.onload = (e) => { emit('done', e.target?.result ?? '') }
-  reader.readAsDataURL(file)
+  const url = await upload(file)
+  emit('done', url)
 }
 </script>
 

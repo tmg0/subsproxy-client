@@ -42,3 +42,17 @@ interface Server {
 interface ServerConf {
   address: string
 }
+
+interface TencentStsCredential {
+  sessionToken: string
+  tmpSecretId: string
+  tmpSecretKey: string
+}
+
+interface TencentSts {
+  expiredTime: number
+  expiration: string
+  credentials: TencentStsCredential
+  requestId: string
+  startTime: number
+}

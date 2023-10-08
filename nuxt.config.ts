@@ -16,6 +16,11 @@ export default defineNuxtConfig({
 
   imports: { dirs: ['./stores'] },
 
+  runtimeConfig: {
+    TENCENT_BUCKET: process.env.TENCENT_BUCKET,
+    TENCENT_REGION: process.env.TENCENT_REGION
+  },
+
   vite: {
     server: {
       proxy: {
