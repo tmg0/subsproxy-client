@@ -8,6 +8,7 @@ interface AccountSubscription {
 
 interface Account {
   id: string
+  avatar?: string
   username: string
   createdAt: string
   updatedAt: string

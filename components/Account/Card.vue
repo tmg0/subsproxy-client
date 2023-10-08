@@ -9,11 +9,7 @@ const emit = defineEmits(['click'])
 <template>
   <div v-motion :tapped="{ scale: 0.9 }" class="card shadow-xl cursor-pointer bg-white" @click="emit('click')">
     <div class="p-3 flex items-center gap-4">
-      <div class="avatar placeholder">
-        <div class="font-bold text-2xl w-12 rounded-xl bg-gradient-to-br from-sky-500 to-primary text-white uppercase">
-          <span>{{ account?.username?.split('.').at(-1)?.at(0) }}</span>
-        </div>
-      </div>
+      <AccountAvatar :content="account?.username" :src="account?.avatar" />
 
       <div class="h-12 text-sm flex-1 flex justify-between">
         <div class="h-full flex flex-col gap-2 justify-center">

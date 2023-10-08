@@ -63,3 +63,7 @@ export const useAccountDevices = (accountId: string) => {
 export const useCreateAccountDevice = (accountId: string) => {
   return useRequest<void>(`/accounts/${accountId}/devices`, { method: 'post' })
 }
+
+export const usePatchAccount = (accountId: string, data: Partial<Account>) => {
+  return useRequest(`/accounts/${accountId}`, { method: 'PATCH', body: data })
+}
