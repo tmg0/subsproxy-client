@@ -6,6 +6,10 @@ const router = useRouter()
 const { data, execute } = useAccounts()
 
 const visible = ref(false)
+
+const onNavi = (account: Account) => {
+  router.push({ name: 'index-account-id', params: { id: account.id }, query: { username: account.username } })
+}
 </script>
 
 <template>
@@ -32,7 +36,7 @@ const visible = ref(false)
             :delay="index * 50"
             :account="account"
             class="mx-4"
-            @click="router.push({ name: 'index-account-id', params: { id: account.id }})"
+            @click="onNavi(account)"
           />
         </div>
       </div>

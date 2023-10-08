@@ -15,8 +15,8 @@ const VisuallyHidden = defineComponent({
           whiteSpace: 'nowrap',
           margin: 0,
           padding: 0,
-          height: '1px',
-          width: '1px',
+          height: 0,
+          width: 0,
           clip: 'rect(0 0 0 0)',
           clipPath: 'inset(100%)'
         }}

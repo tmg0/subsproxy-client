@@ -3,6 +3,10 @@ const emit = defineEmits(['done'])
 
 const domRef = ref()
 
+const onClick = () => {
+  domRef.value?.click()
+}
+
 const handleFileUpload = (event: any) => {
   const file = event.target?.files?.[0]
   if (!file) { return }
@@ -13,7 +17,7 @@ const handleFileUpload = (event: any) => {
 </script>
 
 <template>
-  <div @click="domRef?.fileInput.click()">
+  <div class="cursor-pointer relative" @click="onClick">
     <slot />
     <VisuallyHidden>
       <input ref="domRef" type="file" accept="image/*" @change="handleFileUpload">

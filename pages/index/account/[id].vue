@@ -4,7 +4,7 @@ definePageMeta({
 })
 
 const route = useRoute()
-const { data } = useAccount(route.params.id as string)
+const username = computed(() => route.query.username ?? '')
 
 const tabs = [
   { key: 'index-account-id-subscriptions', label: 'subscriptions' },
@@ -19,7 +19,7 @@ const tabs = [
     <div class="p-4 pt-0 w-full flex flex-col gap-4">
       <div class="text-4xl font-light uppercase">
         <span class="mr-2">#</span>
-        <span>{{ data?.username }}</span>
+        <span>{{ username }}</span>
       </div>
 
       <div>
@@ -27,7 +27,7 @@ const tabs = [
           <NuxtLink
             v-for="tab in tabs"
             :key="tab.key"
-            :to="{ name: tab.key }"
+            :to="{ name: tab.key, query: route.query }"
             class="tab tab-bordered flex-1 uppercase snap-center"
             :class="{ 'tab-active': route.name === tab.key }"
           >
@@ -38,8 +38,6 @@ const tabs = [
         <NuxtPage />
       </div>
     </div>
-
-   
   </div>
 </template>
 

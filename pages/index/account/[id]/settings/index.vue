@@ -26,7 +26,23 @@ const onUpload = async (avatar: string) => {
 
 <template>
   <div class="my-4">
-    <Upload @done="onUpload" />
+    <div class="flex items-center justify-between">
+      <div>
+        <div class="font-bold">
+          Avatar
+        </div>
+        <div class="text-xs text-black/25">
+          profile picture
+        </div>
+      </div>
+      <Upload class="h-12 overflow-hidden" @done="onUpload">
+        <AccountAvatar :content="data?.username" :src="data?.avatar" />
+      </Upload>
+    </div>
+
+    <div class="divider uppercase">
+      links
+    </div>
 
     <div class="w-full flex flex-col gap-2">
       <Snippet
