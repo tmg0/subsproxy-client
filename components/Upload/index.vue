@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const emit = defineEmits(['done'])
-const { upload } = useCos()
+const { upload } = useMinio()
 
 const domRef = ref()
 
