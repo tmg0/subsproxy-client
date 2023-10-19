@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { joinURL } from 'ufo'
+import { Hero } from 'hero-motion'
 import TrashCan from '~icons/carbon/trash-can'
 
 const route = useRoute()
@@ -35,9 +36,11 @@ const onUpload = async (avatar: string) => {
           profile picture
         </div>
       </div>
-      <Upload class="h-12 overflow-hidden" @done="onUpload">
-        <AccountAvatar :content="data?.username" :src="data?.avatar" />
-      </Upload>
+      <Hero :layout-id="`ACCOUNT_AVATAR:${accountId}`">
+        <Upload class="h-12 overflow-hidden" @done="onUpload">
+          <AccountAvatar :content="data?.username" :src="data?.avatar" />
+        </Upload>
+      </Hero>
     </div>
 
     <div class="divider uppercase">

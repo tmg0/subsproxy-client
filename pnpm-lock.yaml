@@ -15,8 +15,8 @@ dependencies:
     specifier: ^1.4.20
     version: 1.4.20
   hero-motion:
-    specifier: ^0.0.6
-    version: 0.0.6(@vueuse/core@10.2.1)(@vueuse/motion@2.0.0)(vue@3.3.4)
+    specifier: ^0.0.7
+    version: 0.0.7(@vueuse/core@10.2.1)(@vueuse/motion@2.0.0)(vue@3.3.4)
   nanoid:
     specifier: ^4.0.2
     version: 4.0.2
@@ -5119,8 +5119,8 @@ packages:
   /hash-sum@2.0.0:
     resolution: {integrity: sha512-WdZTbAByD+pHfl/g9QSsBIIwy8IT+EsPiKDs0KNX+zSHhdDLFKdZu0BQHljvO+0QI/BasbMSUa8wYNCZTvhslg==}
 
-  /hero-motion@0.0.6(@vueuse/core@10.2.1)(@vueuse/motion@2.0.0)(vue@3.3.4):
-    resolution: {integrity: sha512-ZO1A9rSCVohbtzOy5Mxmr2BZTDJBve86Nu4k065arsuVI8R2Qn8sfY4a0NbdPBw4tggtygAjlbK2h8WbLe9DKw==}
+  /hero-motion@0.0.7(@vueuse/core@10.2.1)(@vueuse/motion@2.0.0)(vue@3.3.4):
+    resolution: {integrity: sha512-StApCHf2R7PC04jz6YeswbiHypWtw6FDHgCV5ab2xNr3F6KZHHZGKNKlytvGcefWbRX9HhJYyd+sKZdObidcQQ==}
     peerDependencies:
       '@vueuse/core': '>=10.0.0'
       '@vueuse/motion': '>=2.0.0'

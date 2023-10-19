@@ -22,7 +22,7 @@ const tabs = [
     <div class="p-4 pt-0 w-full flex flex-col gap-4">
       <div class="flex items-center text-4xl font-light uppercase relative z-10">
         <span class="mr-2">#</span>
-        <Hero :layout-id="accountId">
+        <Hero :style="{ fontSize: '2.25rem', fontWeight: 300 }" :layout-id="`ACCOUNT_NAME:${accountId}`">
           {{ username }}
         </Hero>
       </div>
