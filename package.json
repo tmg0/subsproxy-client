@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "build": "nuxt build --dotenv .env",
+    "publish": "dude build",
     "dev": "nuxt dev --dotenv .env",
     "generate": "nuxt generate --dotenv .env",
     "preview": "nuxt preview",
