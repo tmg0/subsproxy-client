@@ -1,9 +1,12 @@
 <script setup lang="ts">
+import { Hero } from 'hero-motion'
+
 definePageMeta({
   redirect: { name: 'index-account-id-subscriptions' }
 })
 
 const route = useRoute()
+const accountId = computed(() => route.params.id as string)
 const username = computed(() => route.query.username ?? '')
 
 const tabs = [
@@ -17,9 +20,11 @@ const tabs = [
 <template>
   <div>
     <div class="p-4 pt-0 w-full flex flex-col gap-4">
-      <div class="text-4xl font-light uppercase">
+      <div class="flex items-center text-4xl font-light uppercase relative z-10">
         <span class="mr-2">#</span>
-        <span>{{ username }}</span>
+        <Hero :layout-id="accountId">
+          {{ username }}
+        </Hero>
       </div>
 
       <div>

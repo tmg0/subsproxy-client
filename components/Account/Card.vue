@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { Hero } from 'hero-motion'
+
 defineProps<{
   account: Account
 }>()
@@ -18,9 +20,9 @@ const emit = defineEmits(['click'])
               <div class="w-[6px] h-[6px] bg-accent rounded-full" />
             </div>
 
-            <div class="font-bold uppercase">
+            <Hero :layout-id="account.id" class="font-bold uppercase">
               {{ account?.username }}
-            </div>
+            </Hero>
 
             <div class="text-xs text-gray-300">
               ( S-{{ account?.accountSubscription?.length || 0 }} )

@@ -14,6 +14,9 @@ dependencies:
   cos-js-sdk-v5:
     specifier: ^1.4.20
     version: 1.4.20
+  hero-motion:
+    specifier: ^0.0.6
+    version: 0.0.6(@vueuse/core@10.2.1)(@vueuse/motion@2.0.0)(vue@3.3.4)
   nanoid:
     specifier: ^4.0.2
     version: 4.0.2
@@ -5116,6 +5119,20 @@ packages:
   /hash-sum@2.0.0:
     resolution: {integrity: sha512-WdZTbAByD+pHfl/g9QSsBIIwy8IT+EsPiKDs0KNX+zSHhdDLFKdZu0BQHljvO+0QI/BasbMSUa8wYNCZTvhslg==}
 
+  /hero-motion@0.0.6(@vueuse/core@10.2.1)(@vueuse/motion@2.0.0)(vue@3.3.4):
+    resolution: {integrity: sha512-ZO1A9rSCVohbtzOy5Mxmr2BZTDJBve86Nu4k065arsuVI8R2Qn8sfY4a0NbdPBw4tggtygAjlbK2h8WbLe9DKw==}
+    peerDependencies:
+      '@vueuse/core': '>=10.0.0'
+      '@vueuse/motion': '>=2.0.0'
+      vue: '>=3.0.0'
+    dependencies:
+      '@vueuse/core': 10.2.1(vue@3.3.4)
+      '@vueuse/motion': 2.0.0(vue@3.3.4)
+      defu: 6.1.2
+      lodash.omit: 4.5.0
+      vue: 3.3.4
+    dev: false
+
   /hey-listen@1.0.8:
     resolution: {integrity: sha512-COpmrF2NOg4TBWUJ5UVyaCU2A88wEMkUPK4hNqyCkqHbxT92BbvfjoSozkAIIm6XhicGlJHhFdullInrdhwU8Q==}
     dev: false
@@ -5981,6 +5998,10 @@ packages:
   /lodash.merge@4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
     dev: true
+
+  /lodash.omit@4.5.0:
+    resolution: {integrity: sha512-XeqSp49hNGmlkj2EJlfrQFIzQ6lXdNro9sddtQzcJY8QaoC2GO0DT7xaIokHeyM+mIT0mPMlPvkYzg2xCuHdZg==}
+    dev: false
 
   /lodash.pick@4.4.0:
     resolution: {integrity: sha512-hXt6Ul/5yWjfklSGvLQl8vM//l3FtyHZeuelpzK6mm99pNvN9yTDruNZPEJZD1oWrqo+izBmB7oUfWgcCX7s4Q==}

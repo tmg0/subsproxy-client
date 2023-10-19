@@ -1,5 +1,11 @@
+<script setup lang="ts">
+import { HeroProvider } from 'hero-motion'
+</script>
+
 <template>
-  <NuxtPage />
+  <HeroProvider>
+    <NuxtPage />
+  </HeroProvider>
 </template>
 
 <style>
