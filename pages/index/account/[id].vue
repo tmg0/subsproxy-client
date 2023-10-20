@@ -20,12 +20,10 @@ const tabs = [
 <template>
   <div>
     <div class="p-4 pt-0 w-full flex flex-col gap-4">
-      <div class="flex items-center text-4xl font-light uppercase relative z-10">
+      <Hero :layout-id="`ACCOUNT_NAME:${accountId}`" :transition="{ duration: 500 }" class="flex items-center text-4xl font-light uppercase relative z-10">
         <span class="mr-2">#</span>
-        <Hero :style="{ fontSize: '2.25rem', fontWeight: 300 }" :layout-id="`ACCOUNT_NAME:${accountId}`">
-          {{ username }}
-        </Hero>
-      </div>
+        <span>{{ username }}</span>
+      </Hero>
 
       <div>
         <div class="tabs hidden-horizontal-scrollbar flex w-full flex-nowrap overflow-x-auto">

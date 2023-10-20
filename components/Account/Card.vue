@@ -18,9 +18,9 @@ const emit = defineEmits(['click'])
       <div class="h-12 text-sm flex-1 flex justify-between">
         <div class="h-full flex flex-col gap-2 justify-center">
           <div class="flex items-center gap-2">
-            <span>#</span>
-            <Hero :layout-id="`ACCOUNT_NAME:${account.id}`" :style="{ fontSize: '0.875rem', fontWeight: 700 }" class="uppercase relative z-10">
-              {{ account?.username }}
+            <Hero :layout-id="`ACCOUNT_NAME:${account.id}`" :transition="{ duration: 500 }" class="uppercase relative z-10 font-bold">
+              <span class="mr-2">#</span>
+              <span>{{ account?.username }}</span>
             </Hero>
 
             <div class="text-xs text-gray-300">
