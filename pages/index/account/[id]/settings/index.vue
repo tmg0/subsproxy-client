@@ -36,11 +36,9 @@ const onUpload = async (avatar: string) => {
           profile picture
         </div>
       </div>
-      <Hero :layout-id="`ACCOUNT_AVATAR:${accountId}`">
-        <Upload class="h-12 overflow-hidden" @done="onUpload">
-          <AccountAvatar :content="data?.username" :src="data?.avatar" />
-        </Upload>
-      </Hero>
+      <Upload class="h-12 overflow-hidden" @done="onUpload">
+        <AccountAvatar :content="data?.username" :src="data?.avatar" />
+      </Upload>
     </div>
 
     <div class="divider uppercase">
