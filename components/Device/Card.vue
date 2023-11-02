@@ -28,15 +28,17 @@ const logo = computed(() => {
         <Close class="text-lg" />
       </button>
 
-      <div class="absolute w-16 h-16 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full shadow-xl overflow-hidden flex items-center justify-center">
-        <img v-show="logo" class="block w-16 h-16" :src="logo" alt="logo">
-        <span v-show="!ua" class="loading loading-ring loading-lg text-orange-500" />
-      </div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+        <div class="w-16 h-16 rounded-full shadow-xl overflow-hidden flex items-center justify-center">
+          <img v-show="logo" class="block w-16 h-16" :src="logo" alt="logo">
+          <span v-show="!ua" class="loading loading-ring loading-lg text-orange-500" />
+        </div>
 
-      <div class="absolute bottom-3 w-full text-center text-xs text-black/25">
-        <div>{{ ua?.browser }}</div>
-        <div class="scale-75 truncate">
-          {{ ua?.version }}
+        <div class="mt-4 text-center text-xs text-black/25">
+          <div>{{ ua?.browser }}</div>
+          <div class="max-w-[12rem] scale-75 truncate">
+            {{ ua?.version }}
+          </div>
         </div>
       </div>
     </slot>

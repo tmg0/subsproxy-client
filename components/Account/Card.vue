@@ -10,14 +10,14 @@ const emit = defineEmits(['click'])
 
 <template>
   <div v-motion :tapped="{ scale: 0.9 }">
-    <Hero :layout-id="`ACCOUNT_CARD:${account.id}`" :style="{ background: '#ffffff' }" class="card shadow-xl cursor-pointer" @click="emit('click')">
+    <Hero :layout-id="`ACCOUNT_CARD:${account.id}`" :transition="{ bounce: 0 }" :style="{ background: '#ffffff' }" class="card shadow-xl cursor-pointer" @click="emit('click')">
       <div class="p-3 flex items-center gap-4">
         <AccountAvatar :content="account?.username" :src="account?.avatar" />
 
         <div class="h-12 text-sm flex-1 flex justify-between">
           <div class="h-full flex flex-col gap-2 justify-center">
             <div class="flex items-center gap-2">
-              <Hero :layout-id="`ACCOUNT_NAME:${account.id}`" :style="{ fontSize: '0.875rem', fontWeight: 700 }" class="uppercase relative z-10">
+              <Hero :layout-id="`ACCOUNT_NAME:${account.id}`" :transition="{ bounce: 0 }" :style="{ fontSize: '0.875rem', fontWeight: 700 }" class="uppercase relative z-10">
                 <span class="mr-2">#</span>
                 <span>{{ account?.username }}</span>
               </Hero>
