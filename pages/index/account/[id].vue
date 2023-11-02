@@ -18,7 +18,7 @@ const tabs = [
 </script>
 
 <template>
-  <div>
+  <Hero :layout-id="`ACCOUNT_CARD:${accountId}`" :style="{ background: '#f2f2f2' }">
     <div class="p-4 pt-0 w-full flex flex-col gap-4">
       <Hero :layout-id="`ACCOUNT_NAME:${accountId}`" :style="{ fontSize: '2.25rem', fontWeight: 300 }" class="flex items-center text-4xl uppercase relative z-10">
         <span class="mr-2">#</span>
@@ -41,7 +41,7 @@ const tabs = [
         <NuxtPage />
       </div>
     </div>
-  </div>
+  </Hero>
 </template>
 
 <style scoped>
