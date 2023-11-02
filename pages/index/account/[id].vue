@@ -25,7 +25,7 @@ const tabs = [
         <span>{{ username }}</span>
       </Hero>
 
-      <div v-motion :initial="{ opacity: 0 }" :enter="{ opacity: 1, transition: { delay: 300 } }">
+      <div v-motion :initial="{ opacity: 0 }" :enter="{ opacity: 1 }">
         <div class="tabs hidden-horizontal-scrollbar flex w-full flex-nowrap overflow-x-auto">
           <NuxtLink
             v-for="tab in tabs"
